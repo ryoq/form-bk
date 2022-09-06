@@ -96,11 +96,9 @@ app.post("/inquire", upload.single("file"), (req, res) => {
   }
 
   // ここからSlackへ転送する処理
-  const SlackBotToken = "C0416LQGAH2";
-  //`${process.env.SlackBotToken}`;
+  const SlackBotToken = `${process.env.SlackBotToken}`;
   const SlackApiUrl = "https://slack.com/api/";
-  const SlackChannel = "xoxb-4031641060806-4038266418178-8lAZFyHvugYOt1vgtpQ9o9J0";
-  //`${process.env.SlackChannel}`;
+  const SlackChannel = `${process.env.SlackChannel}`;
   const SlackFileName = req.file.originalname;
   const RawFileSize = req.file.size;
   const SlackFileSize = Math.round((RawFileSize / 1000000) * 10) / 10;
