@@ -18,9 +18,6 @@ app.use(cors());
 
 const upload = multer({ dest: "/tmp/" });
 
-//必要ないかも
-const TestKey = `${process.env.TestKey}`;
-
 app.post("/inquire", upload.single("file"), (req, res) => {
   console.log("POST /inquire");
   let err = { message: {} };
